@@ -10,10 +10,10 @@
           {{workout.name}}
         </template>
         <template slot="lead">
-          Sets: {[workout.sets}}
-          Reps: {{workout.reps}}
-          Weight(lbs) {{workout.weight}}
-          Personal Record {{workout.personal_record}}
+          Sets: {{workout.sets}}<br>
+          Reps: {{workout.reps}}<br>
+          Weight(lbs) {{workout.weight}}<br>
+          Personal Record {{workout.personal_record}}<br>
         </template>
         <hr class="my-4">
         <p>
@@ -28,6 +28,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   name: 'ShowRoutine',
   data () {
@@ -36,7 +37,7 @@ export default {
     }
   },
   created () {
-    axios.get(`http://localhost:3000/workout/`, this.$route.params.id)
+    axios.get(`http://localhost:3000/workout/` + this.$route.params.id)
       .then(response => {
         this.workout = response.data
       })
@@ -52,7 +53,7 @@ export default {
       })
     },
     deleteworkout (workoutid) {
-      axios.delete(`http://localhost:3000/workout/` + workoutid)
+      axios.delete('http://localhost:3000/workout/' + workoutid)
         .then((result) => {
           this.$router.push({
             name: 'Home'
