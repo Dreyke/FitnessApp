@@ -79,5 +79,7 @@ export default {
 <style scoped>
   #createWO {
     margin-top: 60px;
+    font-weight: 400;
+    font-size: large;
   }
 </style>

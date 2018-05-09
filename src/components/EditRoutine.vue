@@ -94,5 +94,7 @@ export default {
 <style scoped>
   #editWO {
     margin-top: 60px;
+    font-weight: 400;
+    font-size: large;
   }
 </style>

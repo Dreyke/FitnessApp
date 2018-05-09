@@ -1,53 +1,35 @@
 <template>
   <div id="app">
-        <b-navbar toggleable="md" type="light" variant="primary">
+    <v-app>
+     <page-header/>
 
-          <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-          <b-navbar-brand href="#/">Fitness App</b-navbar-brand>
-
-          <b-collapse is-nav id="nav_collapse">
-
-            <b-navbar-nav>
-              <b-nav-item href="#/CreateRoutine">Create New Workout</b-nav-item>
-            </b-navbar-nav>
-
-            <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-
-              <b-nav-item-dropdown right>
-                <!-- Using button-content slot -->
-                <template slot="button-content">
-                  <em>User</em>
-                </template>
-                <b-dropdown-item href="#">Signout</b-dropdown-item>
-              </b-nav-item-dropdown>
-            </b-navbar-nav>
-
-          </b-collapse>
-        </b-navbar>
-            <router-view/>
+      <main>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </main>
+    </v-app>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/Header.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    PageHeader
+  }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: large;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: lightcoral;
+  margin-top: 40px;
 }
-</style>
-
-<style scoped>
-  #app {
-    position: sticky;
-  }
 </style>
