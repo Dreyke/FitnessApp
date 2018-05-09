@@ -2,25 +2,31 @@
   <div id="showWO">
     <b-row>
       <b-col cols="12">
+
         <h2>
           View Workout Stats
         </h2>
+
         <b-jumbotron>
           <template slot="header">
             {{workout.name}}
           </template>
+
           <template slot="lead">
             Sets: {{workout.sets}}<br>
             Reps: {{workout.reps}}<br>
             Weight(lbs) {{workout.weight}}<br>
             Personal Record {{workout.personal_record}}<br>
           </template>
+
           <hr class="my-4">
           <p>
             Updated Date: {{workout.updated_date}}
           </p>
+
           <b-btn variant="success" @click.stop="editworkout(workout._id)">Edit</b-btn>
           <b-btn variant="danger" @click.stop="deleteworkout(workout._id)">Delete</b-btn>
+
         </b-jumbotron>
       </b-col>
     </b-row>
@@ -28,6 +34,9 @@
 </template>
 
 <script>
+// Gets workout and displays metadata
+// if edit button is clicked, goes to edit routine
+// else if delete button is clicked, deletes the workout
 import axios from 'axios'
 
 export default {
