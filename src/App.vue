@@ -1,6 +1,32 @@
 <template>
   <div id="app">
-    <router-view/>
+        <b-navbar toggleable="md" type="light" variant="primary">
+
+          <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+          <b-navbar-brand href="#/">Fitness App</b-navbar-brand>
+
+          <b-collapse is-nav id="nav_collapse">
+
+            <b-navbar-nav>
+              <b-nav-item href="#/CreateRoutine">Create New Workout</b-nav-item>
+            </b-navbar-nav>
+
+            <!-- Right aligned nav items -->
+            <b-navbar-nav class="ml-auto">
+
+              <b-nav-item-dropdown right>
+                <!-- Using button-content slot -->
+                <template slot="button-content">
+                  <em>User</em>
+                </template>
+                <b-dropdown-item href="#">Signout</b-dropdown-item>
+              </b-nav-item-dropdown>
+            </b-navbar-nav>
+
+          </b-collapse>
+        </b-navbar>
+            <router-view/>
   </div>
 </template>
 
@@ -12,11 +38,16 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: lightcoral;
 }
+</style>
+
+<style scoped>
+  #app {
+    position: sticky;
+  }
 </style>

@@ -1,29 +1,30 @@
 <template>
-  <b-row>
-    <b-col cols="12">
-      <h2>
-        Edit Workout/Routine
-        <b-link href="#/">Home</b-link>
-      </h2>
-      <b-jumbotron>
-        <template slot="header">
-          {{workout.name}}
-        </template>
-        <template slot="lead">
-          Sets: {{workout.sets}}<br>
-          Reps: {{workout.reps}}<br>
-          Weight(lbs) {{workout.weight}}<br>
-          Personal Record {{workout.personal_record}}<br>
-        </template>
-        <hr class="my-4">
-        <p>
-          Updated Date: {{workout.updated_date}}
-        </p>
-        <b-btn variant="success" @click.stop="editworkout(workout._id)">Edit</b-btn>
-        <b-btn variant="danger" @click.stop="deleteworkout(workout._id)">Delete</b-btn>
-      </b-jumbotron>
-    </b-col>
-  </b-row>
+  <div id="showWO">
+    <b-row>
+      <b-col cols="12">
+        <h2>
+          View Workout Stats
+        </h2>
+        <b-jumbotron>
+          <template slot="header">
+            {{workout.name}}
+          </template>
+          <template slot="lead">
+            Sets: {{workout.sets}}<br>
+            Reps: {{workout.reps}}<br>
+            Weight(lbs) {{workout.weight}}<br>
+            Personal Record {{workout.personal_record}}<br>
+          </template>
+          <hr class="my-4">
+          <p>
+            Updated Date: {{workout.updated_date}}
+          </p>
+          <b-btn variant="success" @click.stop="editworkout(workout._id)">Edit</b-btn>
+          <b-btn variant="danger" @click.stop="deleteworkout(workout._id)">Delete</b-btn>
+        </b-jumbotron>
+      </b-col>
+    </b-row>
+  </div>
 </template>
 
 <script>
@@ -70,6 +71,10 @@ export default {
 <style scoped>
   .jumbotron {
     padding: 2rem;
+  }
+
+  #showWO {
+    margin-top: 60px;
   }
 
 </style>
