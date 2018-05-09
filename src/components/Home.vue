@@ -10,7 +10,7 @@
         </p>
         <b-table striped hover :items="workouts" :fields="fields">
           <template slot="actions" scope="row">
-            <b-btn size="sm" @click.stop="details(row.item)">Details</b-btn>
+            <b-btn size="md" @click.stop="details(row.item)">Details</b-btn>
           </template>
         </b-table>
         <ul v-if="errors && errors.length">
@@ -32,7 +32,7 @@ export default {
     return {
       fields: {
         name: {label: 'Name', sortable: true, 'class': 'text-center'},
-        actions: {label: 'Action', 'class': 'text-center'}
+        actions: {label: 'Workout Details', 'class': 'text-center'}
       },
       workouts: [],
       errors: []
