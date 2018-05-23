@@ -1,6 +1,6 @@
 # workout-tracker
 
-> A Vue.js & Node.Js app where the user can tracker their workouts
+> A Vue.js & Node.Js app where the user can track their workouts
 
 ## Build Setup
 
